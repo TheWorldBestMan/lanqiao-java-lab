@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: lanqiao-java-lab
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/lanqiao_lab?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${SPRING_DATASOURCE_USERNAME:lanqiao}
+    password: ${SPRING_DATASOURCE_PASSWORD:lanqiao-dev}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  data:
+    redis:
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
+      timeout: 1s
+  flyway:
+    enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+app:
+  frontend-origin: ${FRONTEND_ORIGIN:http://localhost:5173}
+  redis:
+    rate-limit-enabled: ${REDIS_RATE_LIMIT_ENABLED:false}
+  judge0:
+    enabled: ${JUDGE0_ENABLED:false}
+    base-url: ${JUDGE0_BASE_URL:http://localhost:2358}
+    java-language-id: ${JUDGE0_JAVA_LANGUAGE_ID:91}
+    auth-token: ${JUDGE0_AUTH_TOKEN:}
+    max-source-bytes: 50000
+    max-stdin-bytes: 10000
+    poll-attempts: 8
+    poll-delay-ms: 350
+

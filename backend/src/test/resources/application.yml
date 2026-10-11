@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:lanqiao;MODE=MySQL;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE
+    username: sa
+    password:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+  data:
+    redis:
+      repositories:
+        enabled: false
+app:
+  frontend-origin: http://localhost:5173
+  redis:
+    rate-limit-enabled: false
+  judge0:
+    enabled: false
+    base-url: http://localhost:2358
+    java-language-id: 91
+    auth-token: ""
+    max-source-bytes: 50000
+    max-stdin-bytes: 10000
+    poll-attempts: 2
+    poll-delay-ms: 10
+

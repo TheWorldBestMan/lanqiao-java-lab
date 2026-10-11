@@ -1,0 +1,7 @@
+package com.lanqiao.lab.submission;
+
+public enum SubmissionStatus {
+    QUEUED, RUNNING, ACCEPTED, WRONG_ANSWER, COMPILE_ERROR, RUNTIME_ERROR,
+    TIME_LIMIT_EXCEEDED, INTERNAL_ERROR, JUDGE_UNAVAILABLE
+}
+
